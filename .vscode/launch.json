@@ -1,0 +1,50 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: run_yolov8",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/run_yolov8.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "cfg=/home/tml/VSProjects/polyp_mixed/src/ultralytics/ultralytics/yolo/cfg/mixed_polyp_tml.yaml"
+            ]
+        },
+        {
+            "name": "Python: train_mm_detection",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/mmdet/mmtrain.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                
+                //"/home/tml/VSProjects/EnpoNet/mmdet/configs/mask_rcnn_enpo.py",
+                //"/home/tml/VSProjects/EnpoNet/mmdet/configs/yolox_s_8xb8-300e_coco_enpo.py",
+                //"/home/tml/VSProjects/EnpoNet/mmdet/configs/centernet_r18-dcnv2_8xb16-crop512-140e_enpo.py",
+                //"/home/tml/VSProjects/EnpoNet/mmdet/configs/detr_r50_8xb2-150e_coco_enpo.py",
+                //"/home/tml/VSProjects/EnpoNet/mmdet/configs/dino_enpo.py",
+                //"/home/tml/VSProjects/EnpoNet/mmdet/configs/fcos_r50-caffe_fpn_gn-head_1x_enpo.py",
+                //"/home/tml/VSProjects/EnpoNet/mmdet/configs/ssd300_enpo.py",
+                //"/home/tml/VSProjects/EnpoNet/mmdet/configs/yolov3_d53_8xb8-ms-608-273e_enpo.py",
+                //"/home/tml/VSProjects/EnpoNet/mmdet/configs/centernet_r18-dcnv2_8xb16-crop512-140e_enpo.py",
+                "/home/tml/VSProjects/EnpoNet/mmdet/configs/faster-rcnn_r50_fpn_1x_coco_enpo.py",
+                //"/home/tml/VSProjects/EnpoNet/mmdet/mmdetection/projects/DiffusionDet/configs/diffusiondet_r50_fpn_500-proposals_1-step_crop-ms-480-800-450k_enpo.py"
+        
+            ]
+        },
+    ]
+}
