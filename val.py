@@ -43,7 +43,7 @@ def run(args):
 @dataclass
 class Args:
     # model: str =  f'{CONST.REPO_DIR}/runs/detect/8m_CA_MHSA_BF2/weights/best.pt'
-    model : str = '/data/tml/enpo_dataset/runs/detect/11s/weights/best.pt'
+    model : str = '/data/tml/enpo_dataset/runs/detect/11s_newdata/weights/best.pt'
     mode: str = 'test'
     val: bool = True
     # model: str =  f'{here}/lymonet/configs/yolov8s_1MHSA_CA.yaml'
