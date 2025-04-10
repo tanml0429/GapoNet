@@ -17,7 +17,7 @@ This repository is the source codes for the paper
 
 GapoNet (Gastrointestinal Polyp Detection Network) is proposed to detect gastrointestinal polyps for endoscope images.
 
-![GA](https://github.com/tanml0429/GapoNet/blob/main/docs/GA.jpg)
+![GA](https://github.com/tanml0429/GapoNet/blob/main/docs/GA.png)
 
 Graphical abstract.
 
