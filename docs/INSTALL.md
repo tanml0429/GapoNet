@@ -1,25 +1,25 @@
 # Installation
 
-This document describes how to get EnpoNet source code and configure the running environment.
+This document describes how to get GapoNet source code and configure the running environment.
 
 ## Requirements
 + Python 3.10+
 + Pytorch 2.1+
 + Linux or MacOS
 
-## Get EnpoNet Code
+## Get GapoNet Code
 
 ##### use git:
 ```python
-git clone https://github.com/tanml0429/EnpoNet.git
-cd EnpoNet
+git clone https://github.com/tanml0429/GapoNet.git
+cd GapoNet
 ```
 ##### from github web:
-+ Browse the [EnpoNet] repository
++ Browse the [GapoNet] repository
 + Click "Code"-"Download ZIP"
 ```python
-unzip EnpoNet-master.zip
-cd EnpoNet_master
+unzip GapoNet-master.zip
+cd GapoNet_master
 ```
 
 

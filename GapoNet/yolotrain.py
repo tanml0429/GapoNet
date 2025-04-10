@@ -1,12 +1,10 @@
-
-
 import os, sys
 from pathlib import Path
 
 from dataclasses import dataclass, field
 
-from GapoNet.apis import YOLO, LYMO
-from GapoNet.configs import CONST
+from ultralytics import YOLO
+
 import hepai as hai
 
 
@@ -17,7 +15,7 @@ def run(args):
     kwargs = args.__dict__
     model_name_or_cfg = kwargs.pop('model')
     model_weights = kwargs.pop('weights', None)
-    model = LYMO(model_name_or_cfg, task=args.task)
+    model = YOLO(model_name_or_cfg, task=args.task)
     # model = YOLO(model_name_or_cfg, task=args.task)
 
     if model_weights:
@@ -25,9 +23,9 @@ def run(args):
     
     # model = YOLO(model_name).load(model_weights)
 
-    freeze = kwargs.pop('freeze', '')
-    freeze = [x.strip() for x in freeze.split(',') if x]
-    kwargs['freeze'] = freeze
+    # freeze = kwargs.pop('freeze', '')
+    # freeze = [x.strip() for x in freeze.split(',') if x]
+    # kwargs['freeze'] = freeze
 
     results = model.train(**kwargs)
 
@@ -45,18 +43,17 @@ def run(args):
 @dataclass
 class Args:
     mode: str = 'train'
-    #model: str =  f'{CONST.MODEL_CFG_DIR}/yolo11s_CA2_MHSA.yaml'
-    model: str =  'yolo11s.yaml'
+    model: str =  'yolo11n.pt'
     # weights: str = 'runs/detect/LYMO_MHSA_CA_RB14/weights/best.pt'
-    data: str = f'{CONST.DATA_CFG_DIR}/newdata.yaml'
+    data: str = '/home/tml/VSProjects/GapoNet/GapoNet/configs/data_cfgs/enpo_80.yaml'
 
-    epochs: int = 2
-    batch: int = 32
+    epochs: int = 300
+    batch: int = 16
     imgsz: int = 640
-    workers: int = 16
-    device: str = '5'  # GPU id 
-    base_save_dir: str = '/data/tml/enpo_dataset/runs'
-    name: str = '11s_newdata'
+    workers: int = 8
+    device: str = '1'  # GPU id 
+    # base_save_dir: str = '/data/tml/enpo_dataset/runs'
+    name: str = '11n'
     patience: int = 0
     dropout: float = 0.5
     task: str = 'detect'

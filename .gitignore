@@ -1,11 +1,13 @@
 
+.vscode/
 runs/
 wandb/
 work_dirs/
 mmdet/*
-EnpoNet/ultralytics/*
-EnpoNet/ultralytics
-EnpoNet/repos/ultralyticsback
+GapoNet/ultralytics/*
+GapoNet/ultralytics
+GapoNet/repos/ultralyticsback
+GapoNet.code-workspace
 
 trial
 nohup.out*
@@ -16,14 +18,14 @@ yolo*.pt
 wandb/*
 repos/*
 runs/*
-EnpoNet/ultralytics/*
-EnpoNet/data_tools/similarity_compare/results/*
-EnpoNet/data_tools/*/*.png
-EnpoNet/data_tools/*/*.jpg
-EnpoNet/data_tools/*/*/*.png
-EnpoNet/data_tools/*/*/*.jpg
+GapoNet/ultralytics/*
+GapoNet/data_tools/similarity_compare/results/*
+GapoNet/data_tools/*/*.png
+GapoNet/data_tools/*/*.jpg
+GapoNet/data_tools/*/*/*.png
+GapoNet/data_tools/*/*/*.jpg
 
-.ENPONET.code-workspace
+.GapoNet.code-workspace
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

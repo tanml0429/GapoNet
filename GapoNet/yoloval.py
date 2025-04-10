@@ -1,12 +1,10 @@
-
-
 import os, sys
 from pathlib import Path
 here = Path(__file__).parent
 p = f'{here.parent}'
 if p not in sys.path:
     sys.path.append(p)
-from GapoNet.apis import YOLO, LYMO
+from ultralytics import YOLO
 from GapoNet.configs import CONST
 from dataclasses import dataclass, field
 import hepai
@@ -18,8 +16,8 @@ def run(args):
     kwargs = args.__dict__
     model_name_or_cfg = kwargs.pop('model')
     model_weights = kwargs.pop('weights', None)
-    LYMO.apply_improvements()
-    model = LYMO(model_name_or_cfg)
+
+    model = YOLO(model_name_or_cfg)
     # model = YOLO(model_name_or_cfg)
 
     if model_weights:
@@ -30,7 +28,7 @@ def run(args):
     # results = model.train(**kwargs)
 
     # Evaluate the model's performance on the validation set
-    results = model.val(data=args.data, fine_cls=args.fine_cls, split=args.split, device=args.device)  # results是validator.metrics
+    results = model.val(data=args.data, split=args.split, device=args.device)  # results是validator.metrics
     print(results)
 
     # Perform object detection on an image using the model
@@ -43,24 +41,24 @@ def run(args):
 @dataclass
 class Args:
     # model: str =  f'{CONST.REPO_DIR}/runs/detect/8m_CA_MHSA_BF2/weights/best.pt'
-    model : str = '/data/tml/enpo_dataset/runs/detect/11s/weights/best.pt'
-    mode: str = 'test'
+    model : str = '/home/tml/VSProjects/GapoNet/GapoNet/ultralytics/runs/detect/11n2/weights/last.pt'
+    mode: str = 'val'
     val: bool = True
     # model: str =  f'{here}/lymonet/configs/yolov8s_1MHSA_CA.yaml'
     # model: str = "yolov8x.yaml"
     # weights: str = 'yolov8n.pt'
-    data: str = f'{CONST.DATA_CFG_DIR}/newdata.yaml'
-    split: str = 'test'
+    data: str = f'{CONST.DATA_CFG_DIR}/enpo_80.yaml'
+    split: str = 'val'
     # epochs: int = 300
     batch: int = 1
     imgsz: int = 640
     workers: int = 1
-    device: str = '5'  # GPU id 
+    device: str = '1'  # GPU id 
     project: str = 'runs/val'
-    name: str = '11s_newdata'
+    name: str = '11n'
     # patience: int = 0
     # dropout: float = 0.5
-    fine_cls: str = False  # 是否使用精细分类模型
+    # fine_cls: str = False  # 是否使用精细分类模型
     
  
 if __name__ == '__main__':
